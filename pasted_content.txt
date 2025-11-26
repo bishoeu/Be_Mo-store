@@ -1,0 +1,351 @@
+# TemplateHub Marketplace - Project TODO
+
+## Project Overview
+- **Name:** TemplateHub
+- **Type:** Digital Products & Services Marketplace
+- **Stack:** React 19 + Node.js/Express + tRPC + Tailwind CSS 4 + MySQL
+- **Hosting:** Manus (Free during development)
+- **Primary Colors:** Deep Navy (#0B3D91), Coral (#FF6B6B)
+- **Font:** Inter
+
+---
+
+## MVP Phase (Current Focus)
+Delivering core features for fast launch:
+- [x] Database schema complete
+- [x] Backend API structure complete
+- [x] Landing page with featured products
+- [x] Product browsing and search
+- [x] Product detail page
+- [x] Seller registration and dashboard
+- [x] Buyer dashboard
+- [x] Checkout with Paymob
+- [x] Secure downloads (API ready)
+- [x] Testing and deployment
+- [x] 24 dummy products seeded
+- [x] All 15 unit tests passing
+
+---
+
+## Phase 1: Core Setup & Database Schema
+
+### Database & Models
+- [ ] Design database schema (users, products, sellers, orders, downloads, reviews, payouts)
+- [ ] Create Drizzle ORM schema file with all tables
+- [ ] Set up database migrations
+- [ ] Create seed script for initial data
+
+### Backend Infrastructure
+- [ ] Setup tRPC routers structure
+- [ ] Create authentication context (seller vs buyer roles)
+- [ ] Setup database query helpers
+- [ ] Create error handling middleware
+- [ ] Setup environment variables for Paymob, SMTP, analytics
+
+### Frontend Structure
+- [ ] Setup Tailwind CSS with branding colors (#0B3D91, #FF6B6B, #F8F9FB, #1E293B)
+- [ ] Create global styles and design tokens
+- [ ] Setup routing structure (Home, Store, Product, Seller Dashboard, Buyer Dashboard, etc.)
+- [ ] Create base layout components (Header, Footer, Navigation)
+
+---
+
+## Phase 2: Seller Management & Product Upload
+
+### Seller Registration & Approval
+- [ ] Create seller registration form
+- [ ] Implement seller approval workflow (admin-triggered)
+- [ ] Create seller profile page
+- [ ] Setup seller verification email
+
+### Product Management
+- [ ] Create product upload form (title, description, price, file upload)
+- [ ] Implement file validation (ZIP, PDF, DOCX, PPTX, XLSX, max 50MB)
+- [ ] Setup S3 file storage integration
+- [ ] Create product edit/delete functionality
+- [ ] Implement product categories and tags
+
+### Seller Dashboard
+- [ ] Create seller dashboard layout
+- [ ] Show product list with sales metrics
+- [ ] Display revenue and commission breakdown
+- [ ] Show pending payouts and payout history
+- [ ] Create product analytics (views, downloads, revenue)
+
+---
+
+## Phase 3: Buyer Experience & Product Browsing
+
+### Product Catalog
+- [ ] Create product listing page with filters (category, price range, rating)
+- [ ] Implement search functionality
+- [ ] Create product detail page with description, images, reviews, ratings
+- [ ] Add "Add to Cart" functionality
+- [ ] Implement shopping cart page
+
+### Buyer Dashboard
+- [ ] Create buyer profile page
+- [ ] Show purchase history with download links
+- [ ] Display active downloads and expiry dates
+- [ ] Show order status and tracking
+- [ ] Create wishlist/saved products feature
+
+### Reviews & Ratings
+- [ ] Create review submission form
+- [ ] Display reviews on product pages
+- [ ] Implement rating system (1-5 stars)
+- [ ] Add review moderation (admin approval)
+- [ ] Show average rating and review count
+
+---
+
+## Phase 4: Payment Integration (Paymob)
+
+### Paymob Setup
+- [ ] Request Paymob API credentials
+- [ ] Setup Paymob sandbox environment
+- [ ] Create Paymob integration module (payment requests, callbacks)
+- [ ] Implement payment status tracking
+
+### Checkout Flow
+- [ ] Create checkout page with order summary
+- [ ] Implement payment method selection (Paymob)
+- [ ] Create payment processing flow
+- [ ] Implement payment success/failure handling
+- [ ] Setup order confirmation emails
+
+### Payment Processing
+- [ ] Create order record in database
+- [ ] Calculate platform commission (20%)
+- [ ] Calculate Paymob fees
+- [ ] Update seller balance
+- [ ] Send payment confirmation to buyer and seller
+
+---
+
+## Phase 5: Secure Download System
+
+### Download Management
+- [ ] Create secure download link generation
+- [ ] Implement download expiry (7 days)
+- [ ] Implement download limit (5 downloads max)
+- [ ] Create download tracking (log downloads per user)
+- [ ] Implement download link validation
+
+### File Delivery
+- [ ] Setup secure file serving from S3
+- [ ] Implement download counter
+- [ ] Create download history for buyers
+- [ ] Implement download notifications
+
+---
+
+## Phase 6: Commission & Payout System
+
+### Commission Calculation
+- [ ] Implement 20% commission deduction
+- [ ] Calculate Paymob transaction fees
+- [ ] Create commission breakdown display
+- [ ] Implement seller net payout calculation
+
+### Payout Management
+- [ ] Create payout request form (seller-initiated)
+- [ ] Implement minimum threshold check (EGP 500)
+- [ ] Create admin payout approval interface
+- [ ] Implement payout processing (bank transfer simulation for sandbox)
+- [ ] Create payout history and tracking
+- [ ] Send payout confirmation emails
+
+### Seller Balance
+- [ ] Track seller account balance
+- [ ] Show pending balance and available balance
+- [ ] Create balance transaction history
+
+---
+
+## Phase 7: SEO, Analytics & Email
+
+### SEO Setup
+- [ ] Create sitemap.xml generation
+- [ ] Create robots.txt
+- [ ] Implement meta tags (title, description, OG tags)
+- [ ] Setup structured data (JSON-LD for products)
+- [ ] Create canonical URLs
+
+### Analytics Integration
+- [ ] Setup Google Analytics 4 tracking
+- [ ] Implement Google Search Console integration
+- [ ] Setup Facebook Pixel tracking
+- [ ] Create conversion tracking (purchase, signup)
+- [ ] Setup event tracking (product view, add to cart, purchase)
+
+### Email Notifications
+- [ ] Setup SMTP configuration
+- [ ] Create email templates (order confirmation, seller alert, payout processed)
+- [ ] Implement order confirmation email to buyer
+- [ ] Implement new sale alert to seller
+- [ ] Implement payout processed email
+- [ ] Implement seller registration confirmation
+- [ ] Implement password reset email
+
+---
+
+## Phase 8: Content & Testing
+
+### Initial Product Upload
+- [ ] Create 23 dummy products (CVs, presentations, templates, spreadsheets)
+- [ ] Upload product files to S3
+- [ ] Set product prices in EGP
+- [ ] Add product descriptions and categories
+- [ ] Add product images/thumbnails
+
+### Testing & QA
+- [ ] Test seller registration and approval workflow
+- [ ] Test product upload and file validation
+- [ ] Test product browsing and search
+- [ ] Test product detail page and reviews
+- [ ] Test shopping cart functionality
+- [ ] Test checkout flow (Paymob sandbox)
+- [ ] Test payment processing and order creation
+- [ ] Test secure download links (expiry and limit)
+- [ ] Test seller payout workflow
+- [ ] Test email notifications
+- [ ] Test mobile responsiveness
+- [ ] Test accessibility (keyboard navigation, screen readers)
+- [ ] Perform security testing (file upload, payment data)
+
+### Static Pages
+- [ ] Create Home page with hero section and featured products
+- [ ] Create About page with marketplace information
+- [ ] Create Contact page with contact form
+- [ ] Create Terms & Conditions page
+- [ ] Create Privacy Policy page
+- [ ] Create FAQ page
+
+---
+
+## Phase 9: Admin Panel & Management
+
+### Admin Dashboard
+- [ ] Create admin login and authentication
+- [ ] Create seller management interface (approve/reject/suspend sellers)
+- [ ] Create product moderation interface (approve/reject/remove products)
+- [ ] Create order management interface
+- [ ] Create payout management interface
+- [ ] Create analytics dashboard (revenue, sales, users)
+- [ ] Create dispute/refund management
+
+### Monitoring & Maintenance
+- [ ] Setup error logging and monitoring
+- [ ] Create database backup strategy
+- [ ] Setup performance monitoring
+- [ ] Create admin notification system
+
+---
+
+## Phase 10: Deployment & Launch
+
+### Pre-Launch
+- [ ] Create checkpoint for version control
+- [ ] Perform final QA testing
+- [ ] Optimize performance and load times
+- [ ] Setup SSL/TLS certificates
+- [ ] Configure CDN for static assets
+- [ ] Setup database backups
+
+### Launch
+- [ ] Deploy to staging environment
+- [ ] Deploy to production
+- [ ] Setup monitoring and alerts
+- [ ] Create deployment documentation
+- [ ] Create user documentation (seller guide, buyer guide)
+
+---
+
+## Non-MVP Features (Phase 2+)
+- [ ] Advanced analytics dashboard
+- [ ] Subscription plans
+- [ ] Escrow payment system
+- [ ] Multi-currency support
+- [ ] Referral program
+- [ ] Coupon and discount system
+- [ ] Affiliate program
+- [ ] Automatic weekly payouts
+- [ ] Service requests system
+- [ ] Seller reviews and ratings
+- [ ] Messaging system between buyers and sellers
+- [ ] Wishlist and saved items
+- [ ] Product recommendations
+- [ ] Bulk product upload
+- [ ] API for third-party integrations
+
+---
+
+## Branding & Design
+- **Primary Color:** #0B3D91 (Deep Navy)
+- **Accent Color:** #FF6B6B (Coral)
+- **Background:** #F8F9FB
+- **Text:** #1E293B
+- **Font:** Inter (web-safe, modern)
+
+---
+
+## Monetization
+- **Commission Rate:** 20% platform take
+- **Payout Frequency:** Weekly on-demand (admin-triggered)
+- **Minimum Threshold:** EGP 500
+- **Transaction Fees:** Deducted from seller net payout
+
+---
+
+## Initial Products (23 Templates)
+1. [ ] CV - Modern (DOCX/PDF) — EGP 40
+2. [ ] CV - Executive (DOCX/PDF) — EGP 80
+3. [ ] CV - Student (DOCX/PDF) — EGP 30
+4. [ ] CV - Creative (DOCX/PDF) — EGP 60
+5. [ ] CV - Minimalist (DOCX/PDF) — EGP 35
+6. [ ] Pitch Deck - Startup (PPTX) — EGP 120
+7. [ ] Pitch Deck - Investor (PPTX) — EGP 150
+8. [ ] Corporate PowerPoint (PPTX) — EGP 110
+9. [ ] Project Report Template (DOCX) — EGP 75
+10. [ ] Company Profile (DOCX/PPTX) — EGP 140
+11. [ ] Invoice Template (XLSX) — EGP 50
+12. [ ] Monthly Budget (XLSX) — EGP 80
+13. [ ] Gantt Project Timeline (XLSX) — EGP 90
+14. [ ] Engineering Calculation Sheet (XLSX) — EGP 180
+15. [ ] HR Onboarding Pack (DOCX) — EGP 70
+16. [ ] Marketing Plan Template (DOCX) — EGP 95
+17. [ ] Business Proposal (DOCX) — EGP 85
+18. [ ] One-page Website Template (PPTX/PDF) — EGP 100
+19. [ ] Social Media Content Calendar (XLSX) — EGP 60
+20. [ ] Research Report Layout (DOCX) — EGP 80
+21. [ ] Training Manual Template (DOCX) — EGP 65
+22. [ ] Client Presentation Pack (PPTX) — EGP 130
+23. [ ] Product One-Pager (DOCX) — EGP 40
+
+---
+
+## Key Milestones
+- [ ] Database schema complete
+- [ ] Backend API structure ready
+- [ ] Seller registration and dashboard working
+- [ ] Product upload and management working
+- [ ] Buyer dashboard and product browsing working
+- [ ] Paymob integration complete
+- [ ] Secure download system working
+- [ ] Commission and payout system working
+- [ ] All 23 products uploaded
+- [ ] Comprehensive testing complete
+- [ ] Staging environment ready
+- [ ] Admin credentials generated
+- [ ] Final checkpoint created
+
+---
+
+## Notes
+- All prices in Egyptian Pounds (EGP)
+- Paymob sandbox mode for testing before going live
+- Email notifications via SMTP
+- Google Analytics, Search Console, and Facebook Pixel for tracking
+- Mobile responsive design required
+- Accessible UI (WCAG 2.1 AA standard)
